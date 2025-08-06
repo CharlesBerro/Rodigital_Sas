@@ -121,6 +121,15 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; /* La línea se expande al 100% del ancho */
 }
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 90, 160, 1 )' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Opcional: Eliminar el borde del botón cuando está enfocado */
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 /* ===== HERO SECTION ===== */
 .hero-section {
     background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
@@ -482,6 +491,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    
+    /*
+      Reposicionamos la tarjeta flotante para que no se desborde.
+      La hacemos estática para que ocupe su flujo normal en el documento.
+    */
+    .floating-card {
+        position: static; /* Cambiamos de 'absolute' a 'static' */
+        margin-top: 2rem; /* Añadimos un margen superior para separarla de la imagen */
+        left: auto;       /* Reseteamos la propiedad 'left' */
+        bottom: auto;     /* Reseteamos la propiedad 'bottom' */
+    }
+
+    /*
+      Aseguramos que el cuerpo de la página no permita el desbordamiento.
+      Esto es una medida de seguridad adicional.
+    */
+    body {
+        overflow-x: hidden;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;

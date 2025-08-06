@@ -44,20 +44,23 @@ function initNavbar() {
 
 // ===== SMOOTH SCROLLING ===== //
 function initSmoothScrolling() {
-    // Smooth scrolling para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            if (target) {
-                const offsetTop = target.offsetTop - 80; // Ajuste para navbar fijo
+            const targetId = this.hash; // Obtiene la parte del ancla (ej: #about)
+            const targetOnPage = document.querySelector(targetId); // Busca el ancla en la página ACTUAL
+
+            // Si el ancla existe en la página actual, hacemos scroll suave.
+            if (targetOnPage) {
+                e.preventDefault(); // Prevenimos la navegación normal SOLO si hacemos scroll
+                const offsetTop = targetOnPage.offsetTop - 80; // Ajuste para el navbar
                 
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
             }
+            // Si el ancla NO existe en la página actual, el `e.preventDefault()` no se ejecuta
+            // y el navegador seguirá el enlace de forma normal (ej: a index.html#about).
         });
     });
 }
