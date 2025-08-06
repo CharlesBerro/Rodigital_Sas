@@ -25,7 +25,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     line-height: 1.2;
@@ -92,11 +97,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
+
 /* Estilo base para el enlace en el menú */
 .nav-link.nav-link-custom {
-    position: relative; /* Necesario para posicionar la línea de abajo */
-    padding-bottom: 8px; /* Espacio para que la línea no esté pegada al texto */
-    transition: color 0.3s ease; /* Transición suave para el color del texto */
+    position: relative;
+    /* Necesario para posicionar la línea de abajo */
+    padding-bottom: 8px;
+    /* Espacio para que la línea no esté pegada al texto */
+    transition: color 0.3s ease;
+    /* Transición suave para el color del texto */
 }
 
 /* Pseudo-elemento que crea la línea azul de abajo */
@@ -104,21 +113,29 @@ h1, h2, h3, h4, h5, h6 {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%; /* Inicia en el centro */
-    transform: translateX(-50%); /* Centra la línea */
-    width: 0; /* Inicia sin ancho */
-    height: 3px; /* Grosor de la línea */
-    background-color: var(--primary-blue); /* Color azul de la línea */
-    transition: width 0.4s ease; /* Animación suave para el ancho */
+    left: 50%;
+    /* Inicia en el centro */
+    transform: translateX(-50%);
+    /* Centra la línea */
+    width: 0;
+    /* Inicia sin ancho */
+    height: 3px;
+    /* Grosor de la línea */
+    background-color: var(--primary-blue);
+    /* Color azul de la línea */
+    transition: width 0.4s ease;
+    /* Animación suave para el ancho */
 }
 
 /* Estilos que se aplican al pasar el cursor (hover) */
 .nav-link.nav-link-custom:hover {
-    color: var(--secondary-green) !important; /* ¡Texto en verde! */
+    color: var(--secondary-green) !important;
+    /* ¡Texto en verde! */
 }
 
 .nav-link.nav-link-custom:hover::after {
-    width: 100%; /* La línea se expande al 100% del ancho */
+    width: 100%;
+    /* La línea se expande al 100% del ancho */
 }
 
 .navbar-toggler-icon {
@@ -437,14 +454,16 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow);
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
     border: 2px solid #e9ecef;
     border-radius: 8px;
     padding: 0.75rem 1rem;
     transition: var(--transition);
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--primary-blue);
     box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
 }
@@ -480,6 +499,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -493,24 +513,35 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 768px) {
-    
+
     /*
       Reposicionamos la tarjeta flotante para que no se desborde.
       La hacemos estática para que ocupe su flujo normal en el documento.
     */
     .floating-card {
-        position: static; /* Cambiamos de 'absolute' a 'static' */
-        margin-top: 2rem; /* Añadimos un margen superior para separarla de la imagen */
-        left: auto;       /* Reseteamos la propiedad 'left' */
-        bottom: auto;     /* Reseteamos la propiedad 'bottom' */
+        position: static;
+        /* Cambiamos de 'absolute' a 'static' */
+        margin-top: 2rem;
+        /* Añadimos un margen superior para separarla de la imagen */
+        left: auto;
+        /* Reseteamos la propiedad 'left' */
+        bottom: auto;
+        /* Reseteamos la propiedad 'bottom' */
     }
 
     /*
       Aseguramos que el cuerpo de la página no permita el desbordamiento.
       Esto es una medida de seguridad adicional.
     */
+    html,
     body {
+        max-width: 100%;
         overflow-x: hidden;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -518,34 +549,35 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .hero-buttons .btn {
         display: block;
         width: 100%;
         margin: 0.5rem 0;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .floating-card {
         position: static;
         margin-top: 2rem;
     }
-    
-    .service-card, .equipment-card {
+
+    .service-card,
+    .equipment-card {
         margin-bottom: 2rem;
     }
-    
+
     .contact-form {
         margin-top: 2rem;
     }
@@ -555,15 +587,17 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
-    .service-card, .equipment-card, .contact-form {
+
+    .service-card,
+    .equipment-card,
+    .contact-form {
         padding: 1.5rem;
     }
-    
+
     .equipment-image {
         height: 200px;
     }
@@ -594,20 +628,23 @@ html {
 }
 
 /* ===== ACCESSIBILITY ===== */
-.btn:focus, .form-control:focus, .form-select:focus {
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
     outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
 }
 
 /* ===== PRINT STYLES ===== */
 @media print {
-    .navbar, .footer {
+
+    .navbar,
+    .footer {
         display: none;
     }
-    
+
     .hero-section {
         min-height: auto;
         padding: 2rem 0;
     }
 }
-
